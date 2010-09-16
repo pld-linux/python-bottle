@@ -6,10 +6,9 @@ Version:	0.8.3
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz#md5=8d0c8282d8311dc63099f98d362f2e63
+Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz
 # Source0-md5:	8d0c8282d8311dc63099f98d362f2e63
 URL:		http://bottle.paws.de/docs/dev/index.html
-BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
