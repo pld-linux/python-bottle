@@ -2,12 +2,12 @@
 Summary:	Fast and simple WSGI-framework for small web-applications
 Summary(pl.UTF-8):	Szybki i prosty szkielet WSGI dla małych aplikacji sieciowych
 Name:		python-%{module}
-Version:	0.8.3
+Version:	0.8.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	8d0c8282d8311dc63099f98d362f2e63
+# Source0-md5:	10e58aa1ef4fe66a9e99153df5dc1b09
 URL:		http://bottle.paws.de/docs/dev/index.html
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
