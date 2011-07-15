@@ -1,0 +1,13 @@
+diff -udr bottle-0.9.5.orig/setup.py bottle-0.9.5/setup.py
+--- bottle-0.9.5.orig/setup.py	2011-06-05 19:23:01.000000000 +0200
++++ bottle-0.9.5/setup.py	2011-07-15 19:12:46.582757494 +0200
+@@ -13,7 +13,8 @@
+     from distutils.command.build_py import build_py
+ 
+ # Ugly, but we can't import bottle with 3.x to read __version__ (throws SyntaxError)
+-for line in open(os.path.join(os.path.dirname(sys.argv[0]),'bottle.py')):
++for line in open(os.path.join(os.path.dirname(sys.argv[0]),'bottle.py'), "rb"):
++    line = line.decode("utf-8")
+     if line.startswith('__version__'):
+         version = eval(line.split('=')[-1])
+ 

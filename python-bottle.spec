@@ -8,13 +8,14 @@
 Summary:	Fast and simple WSGI-framework for small web-applications
 Summary(pl.UTF-8):	Szybki i prosty szkielet WSGI dla małych aplikacji sieciowych
 Name:		python-%{module}
-Version:	0.8.5
+Version:	0.9.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	10e58aa1ef4fe66a9e99153df5dc1b09
+# Source0-md5:	d87cb9aa846003163aeda29226ae1e9c
 URL:		http://bottle.paws.de/docs/dev/index.html
+Patch0:		%{module}-encoding.patch
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
 %endif
@@ -68,7 +69,9 @@ standardowej biblioteki Pythona.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
+%build
 %if %{with python2}
 %{__python} setup.py build -b build-2
 %endif
@@ -98,8 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 	install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
-
-%py3_postclean
 %endif
 
 %clean
@@ -117,6 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%{py3_sitescriptdir}/*.py[co]
+%{py3_sitescriptdir}/*.py
+%{py3_sitescriptdir}/__pycache__
 %{py3_sitescriptdir}/%{module}-*.egg-info
 %endif
