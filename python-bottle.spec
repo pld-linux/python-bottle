@@ -8,13 +8,13 @@
 Summary:	Fast and simple WSGI-framework for small web-applications
 Summary(pl.UTF-8):	Szybki i prosty szkielet WSGI dla małych aplikacji sieciowych
 Name:		python-%{module}
-Version:	0.9.5
+Version:	0.10.11
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	d87cb9aa846003163aeda29226ae1e9c
-URL:		http://bottle.paws.de/docs/dev/index.html
+# Source0-md5:	d4e97c040b3f296ab55f43d8c7e96c9e
+URL:		http://bottlepy.org
 Patch0:		%{module}-encoding.patch
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
