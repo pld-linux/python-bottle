@@ -8,12 +8,12 @@
 Summary:	Fast and simple WSGI-framework for small web-applications
 Summary(pl.UTF-8):	Szybki i prosty szkielet WSGI dla małych aplikacji sieciowych
 Name:		python-%{module}
-Version:	0.12.3
+Version:	0.12.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	31fd7027f8fb72281ed0584214108730
+# Source0-md5:	638af3414f3d4ae0a79152916d373bae
 URL:		http://bottlepy.org
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
