@@ -71,22 +71,18 @@ standardowej biblioteki Pythona.
 
 %build
 %if %{with python2}
-%{__python} setup.py build -b build-2
+%py_build
 %endif
 
 %if %{with python3}
-%{__python3} setup.py build -b build-3
+%py3_build
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with python2}
-%{__python} setup.py \
-	build -b build-2 \
-	install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_ocomp $RPM_BUILD_ROOT%%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%%{py_sitescriptdir}
@@ -94,11 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %if %{with python3}
-%{__python3} setup.py \
-	build -b build-3 \
-	install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py3_install
 %endif
 
 %clean
