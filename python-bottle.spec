@@ -9,13 +9,13 @@
 Summary:	Fast and simple WSGI-framework for small web-applications
 Summary(pl.UTF-8):	Szybki i prosty szkielet WSGI dla małych aplikacji sieciowych
 Name:		python-%{module}
-Version:	0.12.25
-Release:	3
+Version:	0.13.3
+Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/bottle/
 Source0:	https://files.pythonhosted.org/packages/source/b/bottle/%{module}-%{version}.tar.gz
-# Source0-md5:	7d79d6131ecd524530f4e919bc60f444
+# Source0-md5:	76d42b87250e5eb3cd24946bfe8f1b0f
 URL:		http://bottlepy.org/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
@@ -110,6 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %py3_install
 
+rm $RPM_BUILD_ROOT%{_bindir}/bottle
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/{bottle.py,bottle-3}
 ln -s bootle-3 $RPM_BUILD_ROOT%{_bindir}/bottle
 %endif
@@ -120,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS LICENSE README.rst
+%doc LICENSE README.rst
 %attr(755,root,root) %{_bindir}/bottle-2
 %{py_sitescriptdir}/bottle.py[co]
 %{py_sitescriptdir}/bottle-%{version}-py*.egg-info
@@ -129,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc AUTHORS LICENSE README.rst
+%doc LICENSE README.rst
 %attr(755,root,root) %{_bindir}/bottle
 %attr(755,root,root) %{_bindir}/bottle-3
 %{py3_sitescriptdir}/bottle.py
